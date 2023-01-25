@@ -146,7 +146,13 @@ public function import_excel(Request $request)
    /*  Session::flash('sukses','Data Penduduk Berhasil Diimport!'); */
     // alihkan halaman kembali
     return redirect('/penduduk')->with("Data Berhasil di Import", "success");;
+ 
     
 }
+public function daftarpindah(Request $request, $nik){
+    $pindah = Perpindahan::where('nik', $nik)->first();
+    return view('daftarpindah.tambahdaftar', compact('pindah'));
+}
+
 }
 

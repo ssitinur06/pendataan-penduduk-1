@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>zPengeluaran Iuran Bulanan</title><br>
+	<title>Pengeluaran Iuran Bulanan</title><br>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -13,7 +13,9 @@
 	</style>
     @extends('layouts.app')
     @section('content')
-        <h2 class="text-center mb-4 mt-5"><strong>Laporan Iuran kematian</h2></strong>
+
+    
+        {{-- <h2 class="text-center mb-4 mt-5"><strong>Total Pengeluaran Bulan Ini</h2></strong>
         <div class="row d-flex justify-content-center">
     
             <div class="col-lg-4 col-md-3 m-2">
@@ -83,7 +85,7 @@
         </div>
     
         <br>
-        <br>
+        <br> --}}
     
         <div class="card p-4 m-4">
                 <div class="row justify-content-center">
@@ -105,6 +107,11 @@
           </div> 
           
           <br>
+          <div class="container">
+            @can('bendahara')
+            <a href="/tambahpengeluaranbulanan" class="btn btn-success">+Tambah Data</a>
+          @endcan
+          <br><br>
         
           <div class= "card">
             <div class="card-body">
@@ -132,8 +139,8 @@
                          @foreach ($pengeluaranbulanan as $index => $row)
                         <tr>
                         <th scope="row">{{ $no++}}</th>
-                              <td>{{ $row->tgl_trans }}</td>
-                              <td>{{ $row->bukti_trans }}</td>
+                              <td>{{ $row->tgl_pengeluaran }}</td>
+                              <td>{{ $row->bukti_pengeluaran }}</td>
                               <td>{{ $row->Keterangan }}</td>
                               <td>{{ $row->nominal }}</td>
                               <td>{{ auth()->user()->username }}</td>

@@ -88,6 +88,8 @@
                     <td>
                       @can('sekretaris')
                         <a href="/tampilkanpenduduk/{id}{{ $row->id }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="/tambahperpindahan{{ $row->nik }}" class="btn btn-warning" style="background-color: blueviolet"><i class="fa-sharp fa-solid fa-house-user"></i></a>
+                        <a href="/tambahkematian{{ $row->nik }}" class="btn btn-danger" ><i class="fa-solid fa-skull-crossbones"></i></a>
                       @endcan
                         {{-- <a href="#" type="button" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nik="{{ $row->nik }}"><i class="fas fa-trash-alt"></i></a> @endcan --}}
                         <a href="/penduduk/show/{id}{{ $row->id }}" class="btn btn-dark"><i class="fa-solid fa-user"></i></i></a> 

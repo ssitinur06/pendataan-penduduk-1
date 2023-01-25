@@ -13,6 +13,6 @@ class PengeluaranBulanan extends Model
     public $table = "pengeluaranbulanans";
 
     protected $fillable = [
-        'id', 'tgl_trans', 'bukti_trans', 'keterangan', 'nominal'
+        'id', 'tgl_pengeluaran', 'bukti_pengeluaran', 'keterangan', 'nominal'
     ];
 }

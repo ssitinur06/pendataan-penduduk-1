@@ -110,6 +110,8 @@ Route::group(['middleware' => 'prevent'],function(){
     Route::get('/iuranbulanan/show/{id}', [IuranBulananController::class, 'show'])->name('iuranbulanan.show');
 
     Route::get('/pengeluaranbulanan', [PengeluaranBulananController::class, 'index'])->name('pengeluaranbulanan.pengeluaran');
+    Route::get('/tambahpengeluaranbulanan', [PengeluaranBulananController::class, 'tambahpengeluaranbulanan'])->name('pengeluaranbulanan.tambahpengeluaranbulanan');
+    Route::get('/insertpengeluaranbulanan', [PengeluaranBulananController::class, 'insertdata'])->name('pengeluaranbulanan.insertdata');
     
     Route::get('/iurankematian', [IuranKematianController::class, 'iurankematian'])->name('iurankematian.iurankematian');
     Route::get('/tambahiurankematian', [IuranKematianController::class, 'tambahiurankematian'])->name('iurankematian.tambahiurankematian');

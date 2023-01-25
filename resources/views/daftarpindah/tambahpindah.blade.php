@@ -6,7 +6,7 @@
    <div class="col-8">
     <div class="card">
       <div class="card-body">
-        <form action="/insertpenduduk" method="POST" enctype="multipart/form-data">
+        <form action="/insertperpindahan" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">No KK</label>
@@ -111,7 +111,7 @@
         
             <button type="submit" class="btn btn-pill badge-primary"style="font-size: 15px;">
               &nbsp;Simpan Data</button>
-          <a class="btn btn-pill badge-secondary" href="{{ url('/penduduk') }}" style="font-size: 15px;">&nbsp;Kembali</a>
+          <a class="btn btn-pill badge-secondary" href="{{ url('/perpindahan') }}" style="font-size: 15px;">&nbsp;Kembali</a>
         </form>
           </div>
 
