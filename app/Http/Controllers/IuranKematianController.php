@@ -75,7 +75,9 @@ class IuranKematianController extends Controller
             'data' => $data,
             'jumlahkematian' => $jumlahkematian,
             'jumlahtahun' => $jumlahtahun,
-            'jumlahkematian' => $jumlahkematian
+            'jumlahkematian' => $jumlahkematian,
+            'jumlahkematian' => $jumlahkematian,
+            
         ]);
 
     }
@@ -107,10 +109,14 @@ class IuranKematianController extends Controller
 
     public function cetaklaporanpdf(){
         $data = IuranKematian::all();
+        $totalcetakkematian = $data->sum('nominal');
+        
 
         $pdf = PDF::loadView('iurankematian.cetaklaporan', [
-            'data' => $data
+            'data' => $data,
+            'totalcetakkematian' => $totalcetakkematian,
         ]);
+        
         return $pdf->download('iurankematian.pdf');
     }
 

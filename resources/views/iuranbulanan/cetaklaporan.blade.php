@@ -2,7 +2,6 @@
     <div class="card-body">
         <center>
             <h3>LAPORAN KEUANGAN IURAN BULANAN RT 06 RW 05 RANCABENTANG </h3>
-            <h5>BULAN JANUARI -  </h5>
         </center>
         <div class="row justify-content-center">
           @if ($message = Session::get('success'))
@@ -10,10 +9,11 @@
               {{ $message }}
             </div>
           @endif
-          <table class="table" id="example" class="display">
+          <table border="1" cellspasing="0" cellpadding="1" class="table" id="example" class="display">
+            <thead>
               <thead>
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col">No</th>
                   <th scope="col">NIK</th>
                   <th scope="col">Nama Lengkap</th>
                   <th scope="col">Tanggal Bayar</th>
@@ -43,7 +43,7 @@
                   <th>Total</th>
                   <td></td>
                   <td></td>
-                  {{-- <td>{{ $jumlahtahun}}</td> --}}
+                  <td>{{ $totalcetakbulanan}}</td>
                 </tr>
             </tbody>
         </table>

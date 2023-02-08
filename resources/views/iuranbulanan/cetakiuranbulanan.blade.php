@@ -111,6 +111,7 @@
 			<center>
 				<h5>Laporan Iuran Bulanan</h5>
 			</center>
+			
             <div class="row justify-content-center">
               @if ($message = Session::get('success'))
               <div class="alert alert-success" role="alert">

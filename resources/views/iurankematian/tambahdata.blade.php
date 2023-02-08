@@ -12,10 +12,10 @@
             <div class="card-body">
                         <form action="/insertdata" method="GET" enctype="multipart/form-data">
                             @csrf
-                            <div class="mb-3">
+                            {{-- <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">Id Iuran Kematian</label>
                               <input type="text" name="id_iuran_kematian" class="form-control" id="exampleInputEmail1" placeholder="id">
-                            </div>
+                            </div> --}}
                             <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">NIK</label>
                               <input type="text" name="nik" class="form-control" id="exampleInputEmail1" placeholder="NIK" required>
@@ -55,9 +55,9 @@
                               <label for="exampleInputEmail1" class="form-label">Status</label>
                               <input type="text" name="status" class="form-control" id="exampleInputEmail1" placeholder="1 (sudah)">
                             </div>
-                            <button type="submit" class="badge badge-pill badge-primary"style="font-size: 15px;">
+                            <button type="submit" class="btn badge-primary"style="font-size: 15px;">
                               &nbsp;Simpan Data</button>
-                          <a class="badge badge-pill badge-secondary" href="{{ url('/penduduk') }}" style="font-size: 17px;">&nbsp;Kembali</a>
+                          <a class="btn badge-secondary" href="{{ url('/penduduk') }}" style="font-size: 17px;">&nbsp;Kembali</a>
                           </form>
                     </div>
                    </div>

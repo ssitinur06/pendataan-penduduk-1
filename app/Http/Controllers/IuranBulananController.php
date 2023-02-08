@@ -141,9 +141,11 @@ class IuranBulananController extends Controller
      
     public function cetaklaporan_pdf(){
         $data = IuranBulanan::all();
+        $totalcetakbulanan = $data->sum('nominal');
 
         $pdf = PDF::loadView('iuranbulanan.cetaklaporan', [
-            'data' => $data
+            'data' => $data,
+            'totalcetakbulanan' => $totalcetakbulanan
         ]);
         return $pdf->download('iuranbulanan.pdf');
     }
@@ -151,8 +153,7 @@ class IuranBulananController extends Controller
     public function cetak_surat (){
         $data = IuranBulanan::all();
         return view ('iuranbulanan.cetaklaporan', [
-            'data' => $data
-
+            'data' => $data,
         ]);
     }
 }
