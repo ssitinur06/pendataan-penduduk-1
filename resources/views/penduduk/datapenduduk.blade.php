@@ -4,11 +4,15 @@
   </head>
   <body>
     <h1 class="text-center mb-4"><strong>Data Penduduk</strong></h1>
-    <div class="container">
+    <div class="mx-5">
       <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" style="background-color: rgb(4, 63, 130)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class="fa-solid fa-file-import"></i> Import Data
+      <i class="fa-solid fa-file-import"></i> Import Excel
     </button>
+    <button type="button" class="btn btn-primary" style="background-color:blueviolet" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <i class="fa-solid fa-file-import"></i> Export Excel
+    </button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -56,7 +60,7 @@
     
       <div class="card">
         <div class="card-body">
-          <table class="table" id="penduduks"  class="display" >
+          <table class="table text-center" id="penduduks"  class="display" >
             <thead>
               <tr>
                 <th scope="col">No</th>
@@ -66,7 +70,6 @@
                 <th scope="col">Nama</th>
                 <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Tempat Lahir</th>
-                <th scope="col">Tanggal Lahir</th>
                 <th scope="col">Aksi</th>
               </tr>
               
@@ -84,15 +87,14 @@
                     <td>{{ $row->nama }}</td>
                     <td>{{ $row->jenis_kelamin}}</td>
                     <td>{{ $row->tempat_lahir }}</td>
-                    <td>{{ $row->tanggal_lahir }}</td>
                     <td>
                       @can('sekretaris')
-                        <a href="/tampilkanpenduduk/{id}{{ $row->id }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="/tambahperpindahan{{ $row->nik }}" class="btn btn-warning" style="background-color: blueviolet"><i class="fa-sharp fa-solid fa-house-user"></i></a>
-                        <a href="/tambahkematian{{ $row->nik }}" class="btn btn-danger" ><i class="fa-solid fa-skull-crossbones"></i></a>
+                        <a title="Edit Penduduk" href="/tampilkanpenduduk/{{ $row->id }}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                        <a title="Tambah Penduduk Pindah " href="/tambahperpindahan/{{ $row->id }}" class="btn btn-warning" style="background-color: blueviolet"><i class="fa-sharp fa-solid fa-house-user"></i></a>
+                        <a title="Tambahkan Status Kematian" href="/tambahkematian/{{ $row->id }}" class="btn btn-danger" ><i class="fa-solid fa-skull"></i></a>
                       @endcan
                         {{-- <a href="#" type="button" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nik="{{ $row->nik }}"><i class="fas fa-trash-alt"></i></a> @endcan --}}
-                        <a href="/penduduk/show/{id}{{ $row->id }}" class="btn btn-dark"><i class="fa-solid fa-user"></i></i></a> 
+                        <a title="Show Detail Penduduk" href="/penduduk/show/{{ $row->id }}" class="btn btn-dark"><i class="fa-solid fa-user"></i></i></a> 
                      
                     </td>
                     

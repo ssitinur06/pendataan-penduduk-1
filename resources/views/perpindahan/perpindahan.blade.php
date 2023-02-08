@@ -74,7 +74,7 @@
           {{-- <button type="button" class="badge badge-pill badge-secondary" data-bs-dismiss="modal">Tutup</button>
           <button type="submit" class="badge badge-pill badge-primary">Simpan</button> --}}
           <button type="submit" class="btn btn-primary">Simpan</button>
-          <a class="btn btn-secondary" href="{{ url('/perpindahan') }}">Tutup</a>
+          <a class="btn btn-secondary" href="{{ url('/penduduk') }}">Tutup</a>
         </div>
       </form>
       </div>

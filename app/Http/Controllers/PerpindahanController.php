@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Penduduk;
 use App\Models\Perpindahan;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PerpindahanController extends Controller
@@ -23,8 +24,8 @@ class PerpindahanController extends Controller
         
     }
 
-    public function tambahperpindahan(){
-        $data = Perpindahan::all();
+    public function tambahperpindahan($id){
+        $data = Penduduk::find($id);
         return view('perpindahan.tambahdata', compact('data'));
     }
 

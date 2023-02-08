@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Kematian;
+use App\Models\Penduduk;
 use Illuminate\Http\Request;
 
 class KematianController extends Controller
@@ -14,8 +15,9 @@ class KematianController extends Controller
 
 
     
-   public function tambahkematian(){
-    return view('kematian.tambahdata');
+   public function tambahkematian($id){
+    $data = Penduduk::find($id);
+    return view('kematian.tambahdata', compact('data'));
    }
 
    public function insertdata(Request $request){

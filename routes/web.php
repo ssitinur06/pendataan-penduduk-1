@@ -85,7 +85,7 @@ Route::group(['middleware' => 'prevent'],function(){
     Route::get('/tambahdaftar/{nik}', [KelahiranController::class, 'daftar']);
     
     Route::get('/kematian',[KematianController::class, 'index'])->name('kematian.kematian');
-    Route::get('/tambahkematian',[KematianController::class, 'tambahkematian'])->name('kematian.tambahkematian');
+    Route::get('/tambahkematian/{id}',[KematianController::class, 'tambahkematian'])->name('kematian.tambahkematian');
     Route::post('/insertkematian',[KematianController::class, 'insertdata'])->name('kematian.insertdata');
     Route::get('/tampilkematian/{nik}',[KematianController::class, 'tampilkandata'])->name('kematian.tampilkandata');
     Route::post('/updatekematian/{nik}',[KematianController::class, 'updatedata'])->name('kematian.updatedata');
@@ -93,7 +93,7 @@ Route::group(['middleware' => 'prevent'],function(){
     Route::get('/kematian/show/{nik}', [KematianController::class, 'show'])->name('kematian.show');
     
     Route::get('/perpindahan', [PerpindahanController::class, 'index'])->name('perpindahan.perpindahan');
-    Route::get('/tambahperpindahan', [PerpindahanController::class, 'tambahperpindahan'])->name('perpindahan.tambahperpindahan');
+    Route::get('/tambahperpindahan/{id}', [PerpindahanController::class, 'tambahperpindahan'])->name('perpindahan.tambahperpindahan');
     Route::post('/insertperpindahan', [PerpindahanController::class, 'insertdata'])->name('perpindahan.insertdata');
     Route::post('/updateperpindahan/{nik}', [PerpindahanController::class, 'updatedata'])->name('perpindahan.updatedata');
     Route::get('/tampilkanperpindahan/{nik}', [PerpindahanController::class, 'tampilkandata'])->name('perpindahan.tampilkandata');
@@ -112,6 +112,7 @@ Route::group(['middleware' => 'prevent'],function(){
     Route::get('/pengeluaranbulanan', [PengeluaranBulananController::class, 'index'])->name('pengeluaranbulanan.pengeluaran');
     Route::get('/tambahpengeluaranbulanan', [PengeluaranBulananController::class, 'tambahpengeluaranbulanan'])->name('pengeluaranbulanan.tambahpengeluaranbulanan');
     Route::get('/insertpengeluaranbulanan', [PengeluaranBulananController::class, 'insertdata'])->name('pengeluaranbulanan.insertdata');
+    Route::get('/filterpengeluaran', [PengeluaranBulananController::class, 'filterdata']);
     
     Route::get('/iurankematian', [IuranKematianController::class, 'iurankematian'])->name('iurankematian.iurankematian');
     Route::get('/tambahiurankematian', [IuranKematianController::class, 'tambahiurankematian'])->name('iurankematian.tambahiurankematian');

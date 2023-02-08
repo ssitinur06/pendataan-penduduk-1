@@ -18,15 +18,15 @@
                             </div>
                             <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">NIK</label>
-                              <input type="text" name="nik" class="form-control" id="exampleInputEmail1" placeholder="NIK">
+                              <input type="text" name="nik" class="form-control" id="exampleInputEmail1" placeholder="NIK" required>
                             </div>
                             <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                              <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap">
+                              <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" >
                               <label for="filter">Bulan Bayar</label>
-                              <select class="form-control">
+                              <select class="form-control"required>
                                  <option selected>Januari</option>
                                  <option value="1">Februari</option>
                                  <option value="2">Maret</option>
@@ -43,17 +43,17 @@
                             </div>
                             <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">Tanggal Bayar</label>
-                              <input type="date" name="tanggal_bayar" class="form-control" id="exampleInputEmail1" placeholder="tanggal">
+                              <input type="date" name="tanggal_bayar" class="form-control" id="exampleInputEmail1" placeholder="tanggal" required>
                             </div>
                             <div class="form-group">
-                              <label for="filter">Nominal</label>
+                              <label for="filter">Nominal required</label>
                               <select class="form-control">
                                 <option value="1">10000</option>
                               </select>
                             </div>
                             <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">Status</label>
-                              <input type="text" name="status" class="form-control" id="exampleInputEmail1" placeholder="1 (sudah) 0(belum)">
+                              <input type="text" name="status" class="form-control" id="exampleInputEmail1" placeholder="1 (sudah)">
                             </div>
                             <button type="submit" class="badge badge-pill badge-primary"style="font-size: 15px;">
                               &nbsp;Simpan Data</button>

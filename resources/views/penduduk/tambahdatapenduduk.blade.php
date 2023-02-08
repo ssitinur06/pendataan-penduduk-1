@@ -10,34 +10,34 @@
           @csrf
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">NIK</label>
-            <input type="text" name ="nik" class="form-control" id="exampleInputEmail1">
+            <input type="text" name ="nik" class="form-control" id="exampleInputEmail1" required>
           </div>  
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">No KK</label>
-            <input type="text" name ="no_kk" class="form-control" id="exampleInputEmail1">
+            <input type="text" name ="no_kk" class="form-control" id="exampleInputEmail1" required>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nama</label>
-            <input type="text" name ="nama" class="form-control" id="exampleInputEmail1">
+            <input type="text" name ="nama" class="form-control" id="exampleInputEmail1" required>
           </div>
           <div class="form-group">
             <label for="filter">Jenis Kelamin</label>
-            <select class="form-control" name="jenis_kelamin">
+            <select class="form-control" name="jenis_kelamin" required>
               <option value="Laki-Laki">Laki-Laki</option>
               <option value="Perempuan">Perempuan</option>
             </select>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Tempat Lahir</label>
-            <input type="text" name ="tempat_lahir" class="form-control" id="exampleInputEmail1">
+            <input type="text" name ="tempat_lahir" class="form-control" id="exampleInputEmail1" required>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Tanggal Lahir</label>
-            <input type="date" name ="tanggal_lahir" class="form-control" id="exampleInputEmail1">
+            <input type="date" name ="tanggal_lahir" class="form-control" id="exampleInputEmail1" required>
           </div>
           <div class="form-group">
             <label for="filter">Agama</label>
-            <select class="form-control" name="agama">
+            <select class="form-control" name="agama" required>
                <option selected>Pilih</option>
                <option value="Islam">Islam</option>
                <option value="Kristen Protestan">Kristen Protestan</option>
@@ -45,16 +45,15 @@
                <option value="Hindu">Hindu</option>
                <option value="Buddha">Buddha</option>
                <option value="Konghucu">Konghucu</option>
-               <option value="Lainnya">Lainnya</option>
                </select>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Status Perkawinan</label>
-            <input type="text" name ="status_perkawinan" class="form-control" id="exampleInputEmail1">
+            <input type="text" name ="status_perkawinan" class="form-control" id="exampleInputEmail1" required>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Pekerjaan</label>
-            <input type="text" name ="pekerjaan" class="form-control" id="exampleInputEmail1">
+            <input type="text" name ="pekerjaan" class="form-control" id="exampleInputEmail1"required>
           </div>
           <div class="form-group">
             <label for="filter">Status Keluarga</label>
@@ -69,7 +68,7 @@
             </select>
             <div class="form-group">
               <label for="filter">Kewarganegaraan</label>
-              <select class="form-control" name="kewarganegaraan">
+              <select class="form-control" name="kewarganegaraan"required>
                 <option value="WNI">WNI</option>
                 <option value="WNA">WNA</option>
               </select>
@@ -81,15 +80,15 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Kitas/Kitap</label>
-              <input type="text" name ="no_Kitas_kitap" class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="no_Kitas_kitap" class="form-control"  id="exampleInputEmail1" >
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nama Ayah</label>
-              <input type="text" name ="nama_ayah" class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="nama_ayah" class="form-control"  id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nama Ibu</label>
-              <input type="text" name ="nama_ibu" class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="nama_ibu" class="form-control"  id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Foto KTP</label>
@@ -105,7 +104,7 @@
         
             <button type="submit" class="btn btn-pill badge-primary"style="font-size: 15px;">
               &nbsp;Simpan Data</button>
-          <a class="btn btn-pill badge-secondary" href="{{ url('/penduduk') }}" style="font-size: 15px;">&nbsp;Kembali</a>
+          <a class="btn btn-pill badge-secondary" href="{{ url('/kelahiran') }}" style="font-size: 15px;">&nbsp;Kembali</a>
         </form>
           </div>
 

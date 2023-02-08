@@ -92,7 +92,7 @@
                     <div class="col-6 col-lg-6 col-md-6">
                     <div class="card px-6 py-6">
                         <div class="card-body">
-                        <form action="/cetakiurankematian" method="GET">
+                        <form action="/filterpengeluaran" method="GET">
                             <label for="start_date" class="pb-3 fw-bold" style="text-center"><strong> Filter Data dengan Rentang Tanggal :</strong></label>
                             <div class="input-group">
                                 <input type="date" name="start_date" class="form-control" placeholder="Pilih tanggal awal.." style="width: 100px">
@@ -152,7 +152,7 @@
                         <tr>
                             <th></th>
                             <th>Total</th>
-                            <td></td>
+                            <td>{{ $total }}</td>
                             <td></td>
                             {{-- // <td>{{ $jumlahkematian }}</td> --}}
                         </tr>

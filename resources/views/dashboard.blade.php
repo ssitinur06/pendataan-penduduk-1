@@ -178,25 +178,7 @@
                         
                         <!-- Earnings (Monthly) Card Example -->
                         @can('bendahara')
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                <a class="collapse-item" href="/iuranbulanan">
-                                                Laporan</div>
-                                                {{-- {{ $jumlahbulan }} --}}
-                                                
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa-solid fa-money-bill"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                       
                         
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -254,7 +236,20 @@
                                                 <!-- Card Body -->
                                                 <div class="card-body">
                                                     <div class="chart-area">
-                                                        <canvas id="myAreaChart"></canvas>
+                                                        <canvas id="myAreaChart" 
+                                                        data-jan="{{ $statistik[0] }}"
+                                                        data-feb="{{ $statistik[1] }}"
+                                                        data-mar="{{ $statistik[2] }}"
+                                                        data-apr="{{ $statistik[3] }}"
+                                                        data-may="{{ $statistik[4] }}"
+                                                        data-jun="{{ $statistik[5] }}"
+                                                        data-jul="{{ $statistik[6] }}"
+                                                        data-agst="{{ $statistik[7] }}"
+                                                        data-sep="{{ $statistik[8] }}"
+                                                        data-oct="{{ $statistik[9] }}"
+                                                        data-nov="{{ $statistik[10] }}"
+                                                        data-dec="{{ $statistik[11] }}"
+                                                        ></canvas>
                                                     </div>
                                                 </div>
                                             </div>
@@ -285,7 +280,7 @@
                                                 <!-- Card Body -->
                                                 <div class="card-body">
                                                     <div class="chart-pie pt-4 pb-2">
-                                                        <canvas id="myPieChart"></canvas>
+                                                        <canvas id="myPieChart" data-masuk="1000" data-keluar="{{ $total }}"></canvas>
                                                     </div>
                                                     <div class="mt-4 text-center small">
                                                         <span class="mr-2">
@@ -304,7 +299,8 @@
                                     </div>
                 @endif
                 @endcan
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{{-- 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
 {{-- <script>
   // chart view dasbrot
 const labels = [

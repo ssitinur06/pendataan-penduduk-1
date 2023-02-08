@@ -9,43 +9,44 @@
      <div class="col-8">
       <div class="card">
         <div class="card-body">
-          <form action="/insertdata" method="POST" enctype="multipart/form-data">
+          <form action="/insertkematian" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Akta Kematian</label>
-              <input type="text" name ="no_akta_kematian"class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="no_akta_kematian"class="form-control" id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">NIK</label>
-              <input type="text" name ="nik" class="form-control" id="exampleInputEmail1">
+              <input type="text" name="nik" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nik }}" disabled>
+              <input type="hidden" name="nik" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nik }}" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Surat Kematian</label>
-              <input type="text" name ="no_surat_kematian" class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="no_surat_kematian" class="form-control" id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Tempat Kematian</label>
-              <input type="text" name ="tempatkematian" class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="tempatkematian" class="form-control"id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Tanggal Kematian</label>
-              <input type="date" name ="tanggalkematian" class="form-control" id="exampleInputEmail1">
+              <input type="date" name ="tanggalkematian" class="form-control"id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Sebab Kematian</label>
-              <input type="text" name ="sebabkematian" class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="sebabkematian" class="form-control"id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Lokasi Pemakaman</label>
-              <input type="text" name ="lokasipemakaman" class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="lokasipemakaman" class="form-control"id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Masukan foto Surat Kematian</label>
               <input type="file" name ="foto" class="form-control">
             </div>
-            <button type="submit" class="badge badge-pill badge-primary"style="font-size: 15px;">
+            <button type="submit" class="btn btn-pill badge-primary"style="font-size: 15px;">
               &nbsp;Simpan Data</button>
-          <a class="badge badge-pill badge-secondary" href="{{ url('/kematian') }}" style="font-size: 17px;">&nbsp;Kembali</a>
+          <a class="btn btn-pill badge-secondary" href="{{ url('/penduduk') }}" style="font-size: 15px;">&nbsp;Kembali</a>
         </form>
         </div>
       </div>

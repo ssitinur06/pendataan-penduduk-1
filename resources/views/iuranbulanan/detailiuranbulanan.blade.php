@@ -104,7 +104,6 @@
               </div> 
       </body> <br><br>
       <a class="btn btn-dark" style="float:right" href="/iuranbulanan">Tutup</a>
-      <button type="button" href= "#"class="btn btn-primary  " style= "float:right"data-bs-dismiss="modal">Cetak</button>
     </html>
     
     @endsection

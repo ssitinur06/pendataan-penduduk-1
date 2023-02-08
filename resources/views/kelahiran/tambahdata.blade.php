@@ -13,15 +13,15 @@
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">NO KK</label>
-              <input type="text" name ="no_kk"class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="no_kk"class="form-control" id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">NIK</label>
-              <input type="text" name ="nik"class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="nik"class="form-control" id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Akta kelahiran</label>
-              <input type="text" name ="no_akta_kelahiran"class="form-control" id="exampleInputEmail1">
+              <input type="text" name ="no_akta_kelahiran"class="form-control" id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Masukan foto Surat Kelahiran</label>

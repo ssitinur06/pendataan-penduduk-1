@@ -1,19 +1,57 @@
-@extends('layouts.app')
-@section('content')
+
+
 @extends('layouts.app')
 @section ('content')
 
 <title>Data </title>
-    <h1 class="text-center mb-4"><strong>Data Kelahiran</strong></h1>
+    <h2 class="text-center mb-4"><strong>Data Kelahiran</strong></h2>
 
     <div class="container">
       @can('sekretaris')
         <!-- Button trigger modal -->
-        
-  <button type="button" class="btn btn-danger" form action="/tambahkelahiran" style="background-color: #2b93de" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button type="button" class="btn btn-danger" style="background-color: #2b93de" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Tambah +
   </button>
   <br><br>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Kelahiran</h1>
+          <button type="button" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/insertdatakelahiran" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">No KK</label>
+              <input type="text" name ="no_kk"class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">NIK</label>
+              <input type="text" name ="nik" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">No Akta Kelahiran</label>
+              <input type="text" name ="no_akta_kelahiran" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Masukan foto akta kelahiran</label>
+              <input type="file" name ="foto_aktakelahiran" class="form-control">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Simpan</button>
+          <a class="btn btn-secondary" href="{{ url('/kelahiran') }}">Tutup</a>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
   @endcan
     
     @if ($message = Session::get('success'))

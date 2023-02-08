@@ -5,8 +5,10 @@ use App\Models\Kematian;
 use App\Models\penduduk;
 use App\Models\kelahiran;
 use App\Models\Perpindahan;
+use App\Models\IuranBulanan;
 use Illuminate\Http\Request;
 use App\Imports\PendudukImport;
+use App\Models\PengeluaranBulanan;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -24,11 +26,70 @@ class PendudukController extends Controller
         //     abort (403);
         // }
         // $data = Penduduk::all();
+        $jan = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Januari')
+                ->get()
+                ->sum('nominal');
+        $feb = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Februari')
+                ->get()
+                ->sum('nominal');
+        $mar = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Maret')
+                ->get()
+                ->sum('nominal');
+        $apr = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'April')
+                ->get()
+                ->sum('nominal');
+        $may = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Juni')
+                ->get()
+                ->sum('nominal');
+
+        $jun = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Juni')
+                ->get()
+                ->sum('nominal');
+                
+        $jul = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Juli')
+                ->get()
+                ->sum('nominal');
+
+        $agst = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Agustus')
+                ->get()
+                ->sum('nominal');
+
+        $sep = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'September')
+                ->get()
+                ->sum('nominal');
+
+        $oct = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Oktober')
+                ->get()
+                ->sum('nominal');
+
+        $nov = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'November')
+                ->get()
+                ->sum('nominal');
+
+        $dec = IuranBulanan::whereYear('tanggal_bayar', date('Y'))
+                ->where('bulan_bayar', 'Desember')
+                ->get()
+                ->sum('nominal');
+
+        
+        $statistik = [$jan, $feb, $mar, $apr, $may, $jun, $jul, $agst, $sep, $oct, $nov, $dec];
+        $total = PengeluaranBulanan::whereYear('tgl_pengeluaran', date('Y'))->sum('nominal');
         $jmlh_penduduk = Penduduk::all()->count();
         $jmlh_pindah = Perpindahan::all()->count();
         $jmlh_lahir = Kelahiran::all()->count();
         $jmlh_kematian = Kematian::all()->count();
-        return view('dashboard',compact('jmlh_penduduk',  'jmlh_pindah', 'jmlh_lahir', 'jmlh_kematian'));
+        return view('dashboard',compact('jmlh_penduduk',  'jmlh_pindah', 'jmlh_lahir', 'jmlh_kematian', 'statistik', 'total'));
 
     }
 
@@ -145,8 +206,7 @@ public function import_excel(Request $request)
     // notifikasi dengan session
    /*  Session::flash('sukses','Data Penduduk Berhasil Diimport!'); */
     // alihkan halaman kembali
-    return redirect('/penduduk')->with("Data Berhasil di Import", "success");;
- 
+    return redirect(route('penduduk.penduduk'))->with('success', 'Import Telah Berhasil!');
     
 }
 public function daftarpindah(Request $request, $nik){

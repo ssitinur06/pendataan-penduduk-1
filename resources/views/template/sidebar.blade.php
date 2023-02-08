@@ -76,30 +76,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsepages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fa-solid fa-sack-dollar"></i>
-                    <span>Pembayaran</span>
+                    <span>Data Iuran</span>
                 </a>
                 <div id="collapsepages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pembayaran:</h6>
+                        <h6 class="collapse-header">Data Iuran:</h6>
                         <a class="collapse-item" href="/iuranbulanan">Iuran Bulanan</a>
                         <a class="collapse-item" href="/iurankematian">Iuran Kematian</a>
-                        {{-- <a class="collapse-item" href="/pemasukaniuranbulan">Pemasukan</a>
-                        <a class="collapse-item" href="/#">Pengeluaran</a> --}}
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsepages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fa-solid fa-sack-dollar"></i>
-                    <span>Pengeluaran</span>
-                </a>
-                <div id="collapsepages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pengeluaran:</h6>
-                        <a class="collapse-item" href="/pengeluaranbulanan">Pengeluaran Bulanan</a>
-                        <a class="collapse-item" href="/pengeluarankematian">Pengeluaran Kematian</a>
+                        <a class="collapse-item" href="/pengeluaranbulanan">Pengeluaran Iuran</a>
                         {{-- <a class="collapse-item" href="/pemasukaniuranbulan">Pemasukan</a>
                         <a class="collapse-item" href="/#">Pengeluaran</a> --}}
                     </div>

@@ -9,7 +9,50 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card body">
-
+                        <div class="container mt-4">
+                            <form action="/insertperpindahan" method="post" enctype="multipart/form-data">
+                                @csrf 
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">No Surat Pindah</label>
+                                  <input type="text" name="no_surat_pindah" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">No KK</label>
+                                  <input type="text" name="no_kk" class="form-control" id="exampleInputEmail1" value="{{ $data->no_kk}}" disabled>
+                                  <input type="hidden" name="no_kk" class="form-control" id="exampleInputEmail1" value="{{ $data->no_kk}}" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">NIK</label>
+                                  <input type="text" name="nik" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nik }}" disabled>
+                                  <input type="hidden" name="nik" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nik }}">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Tanggal Pindah</label>
+                                  <input type="date" name="tanggal_pindah" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Alamat Tujuan Pindah</label>
+                                  <input type="text" name="alamat_tujuan_pindah" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                </div>
+                                
+                                  <div class="mb-3">
+                                    <label for="note" class="form-label">Catatan</label>
+                                    <textarea name="keterangan"class="form-control" id="text" rows="3" required ></textarea>
+                                  </div>
+                    
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Masukkan Foto Surat Pindah</label>
+                                  <input type="file" name="foto" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              {{-- <button type="button" class="badge badge-pill badge-secondary" data-bs-dismiss="modal">Tutup</button>
+                              <button type="submit" class="badge badge-pill badge-primary">Simpan</button> --}}
+                              <button type="submit" class="btn btn-primary">Simpan</button>
+                              <a class="btn btn-secondary" href="{{ url('/penduduk') }}">Tutup</a>
+                            </div>
+                          </form>
+                        </div>
                     </div>
                    </div>
             </div>

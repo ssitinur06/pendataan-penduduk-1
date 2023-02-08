@@ -9,8 +9,8 @@
      <div class="col-8">
       <div class="card">
         <div class="card-body">
-          <form action="/updatependuduk{{ $data->id }}" method="POST" enctype="multipart/form-data">
-            @csrf
+          <form action="/updatependuduk/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+            @csrf 
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">NIK</label>
               <input type="text" name ="nik" value="{{ $data->nik }}" class="form-control" id="exampleInputEmail1"disabled>

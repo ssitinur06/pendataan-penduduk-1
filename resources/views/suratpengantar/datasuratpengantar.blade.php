@@ -9,7 +9,7 @@
         <div class="row align-items-center mt-2"> 
           <div class="mx-5">
             @can('sekretaris')
-            <a href="/historysuratpengantar" type="button" class="btn btn-primary " style="float: left"><i class="fa-solid fa-clock-rotate-left"></i> History</a>
+            {{-- <a href="/historysuratpengantar" type="button" class="btn btn-primary " style="float: left"><i class="fa-solid fa-clock-rotate-left"></i> History</a> --}}
             <a href="/tambahsuratpengantar" type="button" class="btn btn-success ml-3" style="float: left">Tambah +</a><br>
             @endcan
             <br>
@@ -44,7 +44,6 @@
                     @endphp
                     @foreach ($data as $index)
                     <tr>
-                      {{-- <th scope="row">{{ $index + $data->firstItem() }}</th> --}}
                       <td>{{ $no++ }}</td>
                       <td>{{ $index->nik }}</td>
                         <td>{{ $index->nama }}</td>
@@ -84,7 +83,7 @@
                    
                 </tbody>
               </table>
-              {{ $data->links() }}
+
               
             </div>
           </div>

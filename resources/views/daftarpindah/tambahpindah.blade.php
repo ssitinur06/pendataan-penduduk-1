@@ -111,7 +111,7 @@
         
             <button type="submit" class="btn btn-pill badge-primary"style="font-size: 15px;">
               &nbsp;Simpan Data</button>
-          <a class="btn btn-pill badge-secondary" href="{{ url('/perpindahan') }}" style="font-size: 15px;">&nbsp;Kembali</a>
+          <a class="btn badge-secondary" href="{{ url('/penduduk') }}" style="font-size: 15px;">&nbsp;Kembali</a>
         </form>
           </div>
 
