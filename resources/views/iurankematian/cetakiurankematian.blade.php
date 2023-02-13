@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Iuran Bulanan</title><br>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-	<style type="text/css">
-		table tr td,
-		table tr th{
-			font-size: 12pt;
-		}
-	</style>
-    @extends('layouts.app')
-    @section('content')
+@extends('layouts.app')
+@section('content')
         <h2 class="text-center mb-4 mt-5"><strong>Laporan Iuran kematian</h2></strong>
         <div class="row d-flex justify-content-center">
     

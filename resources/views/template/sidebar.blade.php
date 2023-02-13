@@ -76,37 +76,48 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsepages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fa-solid fa-sack-dollar"></i>
-                    <span>Data Iuran</span>
+                    <span>Pemasukan</span>
                 </a>
                 <div id="collapsepages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Iuran:</h6>
                         <a class="collapse-item" href="/iuranbulanan">Iuran Bulanan</a>
                         <a class="collapse-item" href="/iurankematian">Iuran Kematian</a>
-                        <a class="collapse-item" href="/pengeluaranbulanan">Pengeluaran Iuran</a>
-                        {{-- <a class="collapse-item" href="/pemasukaniuranbulan">Pemasukan</a>
-                        <a class="collapse-item" href="/#">Pengeluaran</a> --}}
                     </div>
                 </div>
             </li>
             
-
-           
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
+                <a class="nav-link" href="/pengeluaranbulanan">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Pengeluaran</span></a>
+            </li>
+{{-- 
+             <!-- Nav Item - Charts -->
+        <li class="nav-item">
+            <a class="nav-link" href="/transaksi">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Data Transaksi</span></a>
+        </li> --}}
+
+             <!-- Nav Item - Pages Collapse Menu -->
+             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapse">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Laporan</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Laporan:</h6>
-                        <a class="collapse-item" href="/cetakiuranbulanan/{id}">Laporan Iuran Bulanan</a>
-                        <a class="collapse-item" href="/cetakiurankematian/{id}">Laporan Iuran Kematian</a>
-                    </div>
+
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Laporan:</h6>
+                    <a class="collapse-item" href="/cetakiuranbulanan/{id}">Laporan Iuran Bulanan</a>
+                    <a class="collapse-item" href="/cetakiurankematian/{id}">Laporan Iuran Kematian</a>
                 </div>
-            </li>
+            </div>
+        </li>
+
+            
 
             @endcannot
 

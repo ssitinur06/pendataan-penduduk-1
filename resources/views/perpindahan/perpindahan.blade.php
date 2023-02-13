@@ -37,15 +37,7 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No KK</label>
-              <select class="form-control" name="no_kk">
-                @foreach ($perpindahan as $item)
-                    @if (old('no_kk') == $item->no_kk)
-                    <option value="{{ $item->no_kk }}" selected>{{ $item->no_kk }}</option>
-                    @else
-                    <option value="{{ $item->no_kk }}">{{ $item->no_kk }}</option>
-                    @endif
-                @endforeach
-                </select>
+              <input type="text" name="no_kk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">NIK</label>

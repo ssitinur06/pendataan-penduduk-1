@@ -10,8 +10,10 @@ class PengeluaranBulananController extends Controller
     public function index(){
         $pengeluaranbulanan = PengeluaranBulanan::all();
         $total = $pengeluaranbulanan->sum('nominal');
+        
         return view('pengeluaranbulanan.pengeluaran',compact ('pengeluaranbulanan', 'total'));
     }
+    
     public function tambahpengeluaranbulanan(Request $request){
         $pengeluaranbulanan = PengeluaranBulanan::all();
         return view('PengeluaranBulanan.tambahdata', compact('pengeluaranbulanan'));

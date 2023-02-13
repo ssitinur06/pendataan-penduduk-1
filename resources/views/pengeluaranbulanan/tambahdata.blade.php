@@ -21,7 +21,7 @@
                               </div>
                               <div class="mb-3">
                                 <label for="note" class="form-label">Keterangan</label>
-                                <textarea name="keterangan"class="form-control" id="text" rows="3" ></textarea>
+                                <textarea type="text"name="keterangan"class="form-control" id="text" rows="3" ></textarea>
                               </div>
                 
                             <div class="mb-3">

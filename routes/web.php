@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KematianController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\KelahiranController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\PerpindahanController;
 use App\Http\Controllers\IuranBulananController;
 use App\Http\Controllers\IuranKematianController;
@@ -108,6 +109,8 @@ Route::group(['middleware' => 'prevent'],function(){
     Route::get('/tampilkaniuranbulanan/{id}', [IuranBulananController::class, 'tampilkandata'])->name('iuranbulanan.tampilkandata');
     Route::post('/iuranbulanan/delete/{id}', [IuranBulananController::class, 'delete'])->name('iuranbulanan.delete');
     Route::get('/iuranbulanan/show/{id}', [IuranBulananController::class, 'show'])->name('iuranbulanan.show');
+
+    Route::get('/transaksi', [TransaksiController::class, 'index']);
 
     Route::get('/pengeluaranbulanan', [PengeluaranBulananController::class, 'index'])->name('pengeluaranbulanan.pengeluaran');
     Route::get('/tambahpengeluaranbulanan', [PengeluaranBulananController::class, 'tambahpengeluaranbulanan'])->name('pengeluaranbulanan.tambahpengeluaranbulanan');

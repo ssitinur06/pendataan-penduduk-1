@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Iuran Bulanan</title><br>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-	<style type="text/css">
-		table tr td,
-		table tr th{
-			font-size: 12pt;
-		}
-	</style>
 @extends('layouts.app')
 @section('content')
     <h2 class="text-center mb-4 mt-5"><strong>Data Laporan Iuran Bulanan</h2></strong>
@@ -40,7 +27,7 @@
 							<i class="fa-solid fa-square-poll-vertical" style="font-size: 50px"></i>
 								<div class="col ml-3">
 									<h6>Total Tahun Ini</h6>
-									<h5 class="font-weight-bold">Rp. {{ $jumlahtahun }}</h5>
+									<h5 class="font-weight-bold">Rp. {{$jumlahtotal}}</h5>
 								</div>
 						</div>
 					</div>
@@ -72,8 +59,8 @@
 						<div class="col-md-12 d-flex justify-content-center px-5">
 							<i class="fa-solid fa-square-poll-vertical" style="font-size: 50px"></i>
 								<div class="col ml-3">
-									<h6>Belum Membayar Bulan Ini</h6>
-									<h5 class="font-weight-bold"></h5>
+									<h6>Pengeluaran</h6>
+									<h5 class="font-weight-bold"> {{$total}}</h5>
 								</div>
 						</div>
 					</div>
@@ -152,7 +139,7 @@
 						<th>Total</th>
 						<td></td>
 						<td></td>
-						<td>{{ $jumlahbulan }}</td>
+						<td>{{ $jumlahtahun}}</td>
 					</tr>
                 </tbody>
             </table>

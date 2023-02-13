@@ -31,7 +31,18 @@ class IuranBulananController extends Controller
 
         $data = IuranBulanan::paginate(15);
         $pengeluaranbulanan = PengeluaranBulanan::all();
-        return view('iuranbulanan.iuranbulanan', compact('data', 'pengeluaranbulanan'));
+        $totaliuranbulanan = $data->sum('nominal');
+        return view('iuranbulanan.iuranbulanan', [
+            'data' => $data,
+            'pengeluaranbulanan' => $pengeluaranbulanan,
+            'totaliuranbulanan' => $totaliuranbulanan,
+
+           
+            ]);
+        } 
+        
+        // return view('iuranbulanan.iuranbulanan', compact('data', 'pengeluaranbulanan'));
+        
 
         // $month = ['januari','februari','maret','april','mei','juni', 'juli', 'agustus', 'september', 'oktober', 'november', 'desember'];
 
@@ -44,12 +55,7 @@ class IuranBulananController extends Controller
         //     'users' => DB::table('users')->paginate(15)
         // ]);
     
-    }
 
-    // public function dasbend (Request $request){
-    //     $data = IuranBulanan::all();
-    //     return view('iuranbulanan.pemasukan', compact('data'));
-    // }
     public function cetakiuranbulanan(Request $request){
         $data = IuranBulanan::all();
         $iuranbulan = IuranBulanan::select('*')
@@ -61,11 +67,19 @@ class IuranBulananController extends Controller
             ->get();
         $jumlahtahun = $iurantahun->sum('nominal');
         $jumlahiuranbulanan = $data->sum('nominal');
+        $pengeluaranbulanan = PengeluaranBulanan::all();
+        $total = $pengeluaranbulanan->sum('nominal');
+        $jumlahtotal =  $jumlahtahun - $total;
         return view('iuranbulanan.cetakiuranbulanan', [
             'data' => $data,
             'jumlahbulan' => $jumlahbulan,
             'jumlahtahun' => $jumlahtahun,
-            'jumlahbulan' => $jumlahbulan
+            'jumlahbulan' => $jumlahbulan,
+            'pengeluaranbulanan' => $pengeluaranbulanan,
+            'total' => $pengeluaranbulanan,
+            'jumlahtotal' => $jumlahtotal,
+
+
 
         
         ]);
@@ -129,20 +143,28 @@ class IuranBulananController extends Controller
             ->get();
         $jumlahtahun = $iurantahun->sum('nominal');
         $jumlahiuran = $data->sum('nominal');
+        $totaliuranbulanan = $data->sum('nominal');
+
         return view('iuranbulanan.cetakiuranbulanan', [
             'data' => IuranBulanan::whereBetween('tanggal_bayar', [$from, $to])->get(),
             'jumlahbulan' => $jumlahbulan,
             'jumlahtahun' => $jumlahtahun,
-            'jumlahbulan' => $jumlahbulan
+            'jumlahbulan' => $jumlahbulan,
+            'totaliuranbulanan' => $totaliuranbulanan
         ]);
     }
 
 
      
     public function cetaklaporan_pdf(){
+        
+        
         $data = IuranBulanan::all();
         $totalcetakbulanan = $data->sum('nominal');
+        $pengeluaranbulanan = PengeluaranBulanan::all();
 
+        
+        
         $pdf = PDF::loadView('iuranbulanan.cetaklaporan', [
             'data' => $data,
             'totalcetakbulanan' => $totalcetakbulanan
@@ -154,6 +176,7 @@ class IuranBulananController extends Controller
         $data = IuranBulanan::all();
         return view ('iuranbulanan.cetaklaporan', [
             'data' => $data,
+            'total' => $total
         ]);
     }
 }

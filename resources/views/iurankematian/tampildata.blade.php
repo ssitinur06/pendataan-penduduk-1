@@ -10,12 +10,8 @@
                         <form action="/updateiurankematian/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">Id Iuran Kematian</label>
-                              <input type="text" name="id_iuran_kematian" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->id_iuran_kematian }}">
-                            </div>
-                            <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">NIK</label>
-                              <input type="text" name="nik" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nik }}">
+                              <input type="text" name="nik" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nik }}" disabled>
                             </div>
                             <div class="mb-3">
                               <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>

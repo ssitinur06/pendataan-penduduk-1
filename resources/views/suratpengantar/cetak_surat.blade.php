@@ -52,10 +52,10 @@
 		</table>
 		<br>
 		</table>
-		<table style="font-size: 12px;">
+		<table style="font-size: 14px;">
 			<tr class="text10">
 				<td>NIK</td>
-				<td width="541">: {{ $data->nik }}</td>
+				<td width="541"></td>
 			</tr>
 			<tr>
 				<td>Nama</td>

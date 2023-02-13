@@ -4,14 +4,7 @@
   </head>
   <body>
     <h1 class="text-center mb-4"><strong>Data Penduduk</strong></h1>
-    <div class="mx-5">
-      <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" style="background-color: rgb(4, 63, 130)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class="fa-solid fa-file-import"></i> Import Excel
-    </button>
-    <button type="button" class="btn btn-primary" style="background-color:blueviolet" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class="fa-solid fa-file-import"></i> Export Excel
-    </button>
+    <div class="mx-5" >
 
 
 <!-- Modal -->
@@ -39,6 +32,13 @@
     @can('sekretaris')
     <a href="/tambahpenduduk" class="btn btn-success">+Tambah Data</a>
     @endcan
+      <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" style="background-color: rgb(4, 63, 130)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <i class="fa-solid fa-file-import"></i> Import Excel
+    </button>
+    <button type="button" class="btn btn-primary" style="background-color:blueviolet" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <i class="fa-sharp fa-solid fa-file-export"></i> Export Excel
+    </button>
     <br><br>
     <div class="row g-3 align-items-center mt-2">
       <div class="col-auto">

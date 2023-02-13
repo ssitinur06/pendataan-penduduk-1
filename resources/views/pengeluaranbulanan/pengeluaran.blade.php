@@ -1,92 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Pengeluaran Iuran Bulanan</title><br>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-	<style type="text/css">
-		table tr td,
-		table tr th{
-			font-size: 12pt;
-		}
-	</style>
-    @extends('layouts.app')
+ @extends('layouts.app')
     @section('content')
 
-    
-        {{-- <h2 class="text-center mb-4 mt-5"><strong>Total Pengeluaran Bulan Ini</h2></strong>
-        <div class="row d-flex justify-content-center">
-    
-            <div class="col-lg-4 col-md-3 m-2">
-                <div class="card h-100">
-                    <div class="card-body px-3 py-4">
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-center px-5">
-                                    <i class="fa-solid fa-square-poll-vertical" style="font-size: 50px"></i>
-                                    <div class="col ml-3">
-                                        <h6>Total Iuran Kematian Ini</h6>
-                                        <h5 class= "font-weight-bold">Rp. </h5>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-3 m-2">
-                <div class="card h-100">
-                    <div class="card-body px-3 py-4">
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-center px-5">
-                                <i class="fa-solid fa-square-poll-vertical" style="font-size: 50px"></i>
-                                    <div class="col ml-3">
-                                        <h6>Total Tahun Ini</h6>
-                                        <h5 class="font-weight-bold">Rp. </h5>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-3 m-2">
-                <div class="card h-100">
-                    <div class="card-body px-3 py-4">
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-center px-5">
-                                <i class="fa-solid fa-square-poll-vertical" style="font-size: 50px"></i>
-                                    <div class="col ml-3">
-                                        <h6>Sudah Membayar Bulan Ini</h6>
-                                        <h5 class="font-weight-bold"> </h5>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            
-            <div class="col-lg-4 col-md-3 m-2">
-                <div class="card h-100">
-                    <div class="card-body px-3 py-4">
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-center px-5">
-                                <i class="fa-solid fa-square-poll-vertical" style="font-size: 50px"></i>
-                                    <div class="col ml-3">
-                                        <h6>Belum Membayar Bulan Ini</h6>
-                                        <h5 class="font-weight-bold"></h5>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <br>
-        <br> --}}
-    
         <div class="card p-4 m-4">
                 <div class="row justify-content-center">
                     <div class="col-6 col-lg-6 col-md-6">
@@ -98,7 +12,6 @@
                                 <input type="date" name="start_date" class="form-control" placeholder="Pilih tanggal awal.." style="width: 100px">
                                 <input type="date" name="end_date" class="form-control" placeholder="Pilih tanggal akhir.."  style="width: 100px">
                                 <button type="submit" class="mx-2 btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i>  Filter</button>
-                                <a href="" class="btn btn-secondary" style="float:right"><i class="fa-sharp fa-solid fa-print"></i> Cetak</i></a>
                             </div>
                         </form>
                     </div>
@@ -113,14 +26,15 @@
           @endcan
           <br><br>
         
-          <div class= "card">
+          @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button> 
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
+            <div class="card">
             <div class="card-body">
                 <div class="row justify-content-center">
-                  @if ($message = Session::get('success'))
-                  <div class="alert alert-success" role="alert">
-                      {{ $message }}
-                    </div>
-                  @endif
                   <table class="table" id="example" class="display">
                       <thead>
                         <tr>
@@ -141,23 +55,25 @@
                         <th scope="row">{{ $no++}}</th>
                               <td>{{ $row->tgl_pengeluaran }}</td>
                               <td>{{ $row->bukti_pengeluaran }}</td>
-                              <td>{{ $row->Keterangan }}</td>
+                              <td>{{ $row->keterangan }}</td>
                               <td>{{ $row->nominal }}</td>
                               <td>{{ auth()->user()->username }}</td>
-                               
                               </td>
                               <td>
-        
                         @endforeach
                         <tr>
                             <th></th>
                             <th>Total</th>
+                            <th></th>
+                            <th></th>
                             <td>{{ $total }}</td>
                             <td></td>
-                            {{-- // <td>{{ $jumlahkematian }}</td> --}}
                         </tr>
                     </tbody>
                 </table>
+                </div>
+                    </div>
+                  </div>
                 </div>
     
                 </div>
